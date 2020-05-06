@@ -22,4 +22,12 @@ Cinema.prototype.allFilmsOver = function (length) {
   return this.films.every(film => film.length > length);
 }
 
+Cinema.prototype.totalRunningTime = function () {
+  return this.films.reduce((runningTotal, film) => runningTotal + film.length, 0);
+}
+
+Cinema.prototype.filmsByProperty = function (property, value) {
+  return this.films.filter(film => film[property] === value);
+}
+
 module.exports = Cinema;
