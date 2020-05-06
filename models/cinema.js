@@ -18,4 +18,8 @@ Cinema.prototype.filmsExistWithYear = function (year) {
   return this.films.some(film => film.year === year);
 }
 
+Cinema.prototype.allFilmsOver = function (length) {
+  return this.films.every(film => film.length > length);
+}
+
 module.exports = Cinema;
